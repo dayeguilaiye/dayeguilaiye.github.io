@@ -32,7 +32,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="img/avatar.jpg" class="js-avatar">
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
 			
 		</a>
 
@@ -141,7 +141,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="img/avatar.jpg" class="js-avatar">
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -208,14 +208,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>之前在网上看到一段话：</p>
-<p>会不会所谓的人临死前一瞬间会重温人生一幕幕的场景，在你的感官中就是完整一生且时间流速正常？那么，会不会现在你其实就是在死前，重温自己的人生呢？而所谓的即视感（有时候人会觉得眼前这一幕似乎在以前或者梦中发生过），其实就是你偶尔意识到，没错，这件事确实发生过？</p>
-<p>当时看了看就没管了，今天突然想到，在重温到最后会不会重温“重温人生”这个过程呢。。。如果会的话。。。</p>
-<p>就相当于这样：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">人生&#123;</span><br><span class="line">    出生；</span><br><span class="line">    成长；</span><br><span class="line">    衰老；</span><br><span class="line">    濒死；</span><br><span class="line">    死亡；</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">重温&#123;</span><br><span class="line">    人生；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>也就是说在死亡前人就会陷入重温人生的无限循环中，在别人眼中死者濒死的一刹那，对死者来说是无限递归死循环的人生重温。</p>
-<p>那么人死亡的感知可不可能就是无限的重复这一生呢，毕竟对于重温人生的人来说， 他会无限的重温。</p>
-<p>脑洞就只是脑洞而已，其实这里面问题很多，这个说法完全站不住脚，比如：<br>1.人死前一瞬间是不是真的会重温人生<br>2.谁知道重温人生的过程感觉时间流速是正常的并且还不知道自己在重温人生<br>3.就算前两者都满足，重温这样一个过程实质上就是大脑给自己制造的幻觉，本质上还是还是大脑的思考，重温的递归层数高到一定程度时，大脑的思考速度就会满足不了在那么短时间内重温人生的性能需求（见下面*）</p>
-<p>*比如死前会用一秒重温人生的话，那么在重温的那一生中也就会用一秒重温人生，相当于用重温的一生的时间约二十四亿分之一（按80岁寿命算，一生约二十四亿秒）来再重温人生，那么也就是说，如果要在重温的人生中重温人生，就需要在现实世界中的二十四亿分之一秒之内完成，这个操作对大脑的性能需求是经历真·人生中重温人生的性能需求的二十四亿倍，循环一次性能需求就会提高二十四亿倍，这样就根本不可能让人无限循环于重温人生，不过当性能更不上时大脑到底会停止重温还是强行重温接着烧爆cpu。。。谁知道呢。。。</p>
-
+<p>会不会所谓的人临死前一瞬间会重温人生一幕幕的场景，在你的感官中就是完整一生且时间流速正常？那么，会不会现在你其实就是在死前，重温自己的人生呢？而所谓的即视感（有时候人会觉得眼前这一幕似乎在以前或者梦中发生过），其实就是你偶尔意识到，没错，这件事确实发生过？<br>
       
     </div>
     
@@ -228,6 +221,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/8/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -271,10 +268,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用bootstrap中使用的自适应方案</p>
-<p>在css中利用媒体查询   @media max-width/min-width来限定接下来的css样式作用的目标。</p>
-<p>这样达到不同屏幕可以有不同显示效果。</p>
-
+        <p>使用bootstrap中使用的自适应方案<br>
       
     </div>
     
@@ -287,6 +281,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/7/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -331,9 +329,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>使用淘宝的flexible方案</p>
-<p>原理如下：使用js获取浏览器宽度，把宽度的1/10长度设置为<html>标签的字体size，然后rem单位即以htmlsize为基础进行运算。</html></p>
-<p>如：获取当前浏览器宽度为200px，则1/10的宽度就是20px，那么1rem即为20px，这样的话，屏幕变大，则1rem代表的长度也变大，就达到了自适应的要求。</p>
-
+<p>原理如下：使用js获取浏览器宽度，把宽度的1/10长度设置为<html>标签的字体size，然后rem单位即以htmlsize为基础进行运算。<br>
       
     </div>
     
@@ -346,6 +342,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/6/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -389,31 +389,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>参考网站：<a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank" rel="external">bootstrap菜鸟教程</a></p>
-<p>这篇博客里记载我做第一个真正的项目对可能使用到的bootstrap组件的设想</p>
-<p>##一、<a href="http://www.runoob.com/bootstrap/bootstrap-navbar.html" target="_blank" rel="external">导航栏</a></p>
-<p>将navbar和navbar-defalt放入导航栏类名中，使用bootstrap默认导航栏的样式</p>
-<p>再加入类navbar-fixed-top，将导航栏固定在顶部。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-fixed-top"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>返回<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>##二、<a href="http://www.runoob.com/bootstrap/bootstrap-forms.html" target="_blank" rel="external">form表单</a></p>
-<p>###1.单选框</p>
-<p>radio表示这是单选框</p>
-<p>name的值相同的选项为同一组，同一组中只有一个选项可以被选中</p>
-<p>checked属性表示默认为选中状态</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"radio"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"optionsRadios"</span> <span class="attr">checked</span>&gt;</span> 选项 1</span><br><span class="line">   <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"radio"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"optionsRadios"</span>&gt;</span></span><br><span class="line">         选项 2 - 选择它将会取消选择选项 1</span><br><span class="line">   <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>###2.文本框</p>
-<p>form表示这是form表单</p>
-<p>form-group使该div中的元素获得bootstrap中定义的较为合适的间距</p>
-<p>form-control使该控件获得bootstrap边框、圆角、阴影等效果</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">role</span>=<span class="string">"form"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"name"</span>&gt;</span>名称<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">id</span>=<span class="string">"name"</span> </span><br><span class="line">         <span class="attr">placeholder</span>=<span class="string">"请输入名称"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>###3.选择框</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"form-control"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">option</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">option</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">option</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">option</span>&gt;</span>4<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">option</span>&gt;</span>5<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>##三、<a href="http://www.runoob.com/bootstrap/bootstrap-buttons.html" target="_blank" rel="external">按钮</a></p>
-<p>从目前的交互图来看，只需要bootstrap的默认按钮’.btndefault’就够了（待更新），简约大方。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span>&gt;</span>默认按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>##四、完结</p>
-<p>待更新。</p>
-
+        <p>参考网站：<a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">bootstrap菜鸟教程</a></p>
+<p>这篇博客里记载我做第一个真正的项目对可能使用到的bootstrap组件的设想<br>
       
     </div>
     
@@ -426,6 +403,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/5/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -471,15 +452,7 @@
       
         <p>##一、隔离线</p>
 <p>这是水平隔离线(我不懂为什么这里会变成这种酷炫的虚线。。。应该是博客里面定义了什么。。。)</p>
-<p><hr><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is header 1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is some text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>由于html本身并没有竖直方向的隔离线，所以可以用width=0的div的边框实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border-style: solid;width:0px;height:20px;border-width:1px;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>如下：</p>
-<div style="border-style: solid;width:0px;height:20px;border-width:1px;"><br></div>
-
-<p>##二、完结</p>
-<p>待更新。</p>
-
+<p><hr /><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is header 1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is some text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -492,6 +465,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/4/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -535,10 +512,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于这一点，<a href="http://zhihu.com/question/28082877/answer/39335876?utm_campaign=webshare&amp;utm_source=weibo&amp;utm_medium=zhihu" target="_blank" rel="external">知乎</a>上有一个回答解释得很清楚。</p>
-<p>在我的理解，其实css的像素应该用的就是所谓的逻辑像素，而逻辑像素给我的感觉更像对应屏幕尺寸的单位。css像素*dpr=实际像素。</p>
-<p>css中使用px时，就应该直接对应到屏幕的大小上，与分辨率无关。</p>
-
+        <p>关于这一点，<a href="http://zhihu.com/question/28082877/answer/39335876?utm_campaign=webshare&amp;utm_source=weibo&amp;utm_medium=zhihu">知乎</a>上有一个回答解释得很清楚。<br>
       
     </div>
     
@@ -551,6 +525,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/3/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -594,9 +572,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>教程来自<a href="http://isnowfy.github.io/about-simple-cn.html" target="_blank" rel="external">isnowfy的个人博客</a> </p>
-<p>十分方便，此工具是isnowfy制作，想用github page搭建个人博客，又不想太费神或者对技术不太感兴趣的朋友可以采用此办法。</p>
-
+        <p>教程来自<a href="http://isnowfy.github.io/about-simple-cn.html">isnowfy的个人博客</a> </p>
       
     </div>
     
@@ -609,6 +585,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/2/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -653,17 +633,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>wasd<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>qwer<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<button>wasd</button><br><button>qwer</button>
-
-<p>就这样，不管如何设置margin，padding为0都没用，这两个button中间始终有大约一个空格的间距<br>后来在知道上看到有个人说不要换行，于是</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>wasd<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>qwer<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<button>wasd</button><button>qwer</button>
-
-
-<p>我的天！！！卧槽！！！</p>
-<p>我感觉大概是html会把这个换行当做。。。空格？暂时不懂，懵逼。</p>
-<p>留待以后解决，待续。</p>
-
+<button>wasd</button><br><button>qwer</button><br>
       
     </div>
     
@@ -676,6 +646,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/1/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
