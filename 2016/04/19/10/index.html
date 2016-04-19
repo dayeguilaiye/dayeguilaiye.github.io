@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>使用simple迅速搭建博客 | dayeguilaiye&#39;s blog</title>
+  <title>javascript闭包 | dayeguilaiye&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="教程来自isnowfy的个人博客">
+  <meta name="description" content="在今天研究一个css动画的时候碰到一个js写法:12345678910111213var newFireball = (function()&amp;#123;	var nextindex = 0;	return function(x, y, xv, yv, life)&amp;#123;		fireballs[++nextindex] = &amp;#123;			index: nextindex,			x: x,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用simple迅速搭建博客">
-<meta property="og:url" content="http://yoursite.com/2016/04/15/2/index.html">
+<meta property="og:title" content="javascript闭包">
+<meta property="og:url" content="http://yoursite.com/2016/04/19/10/index.html">
 <meta property="og:site_name" content="dayeguilaiye's blog">
-<meta property="og:description" content="教程来自isnowfy的个人博客">
-<meta property="og:updated_time" content="2016-04-15T05:52:45.333Z">
+<meta property="og:description" content="在今天研究一个css动画的时候碰到一个js写法:12345678910111213var newFireball = (function()&amp;#123;	var nextindex = 0;	return function(x, y, xv, yv, life)&amp;#123;		fireballs[++nextindex] = &amp;#123;			index: nextindex,			x: x,">
+<meta property="og:updated_time" content="2016-04-19T02:58:36.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用simple迅速搭建博客">
-<meta name="twitter:description" content="教程来自isnowfy的个人博客">
+<meta name="twitter:title" content="javascript闭包">
+<meta name="twitter:description" content="在今天研究一个css动画的时候碰到一个js写法:12345678910111213var newFireball = (function()&amp;#123;	var nextindex = 0;	return function(x, y, xv, yv, life)&amp;#123;		fireballs[++nextindex] = &amp;#123;			index: nextindex,			x: x,">
   
     <link rel="alternative" href="/atom.xml" title="dayeguilaiye&#39;s blog" type="application/atom+xml">
   
@@ -180,11 +180,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-10" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/15/2/" class="article-date">
-  	<time datetime="2016-04-15T04:38:50.000Z" itemprop="datePublished">2016-04-15</time>
+      <a href="/2016/04/19/10/" class="article-date">
+  	<time datetime="2016-04-19T02:56:10.000Z" itemprop="datePublished">2016-04-19</time>
 </a>
     </div>
   
@@ -197,7 +197,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      使用simple迅速搭建博客
+      javascript闭包
     </h1>
   
 
@@ -206,7 +206,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-blog/">git blog</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
         
@@ -217,9 +217,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>教程来自<a href="http://isnowfy.github.io/about-simple-cn.html" target="_blank" rel="external">isnowfy的个人博客</a> </p>
-<a id="more"></a>
-<p>十分方便，此工具是isnowfy制作，想用github page搭建个人博客，又不想太费神或者对技术不太感兴趣的朋友可以采用此办法。</p>
+        <p>在今天研究一个css动画的时候碰到一个js写法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newFireball = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> nextindex = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x, y, xv, yv, life</span>)</span>&#123;</span><br><span class="line">		fireballs[++nextindex] = &#123;</span><br><span class="line">			index: nextindex,</span><br><span class="line">			x: x,</span><br><span class="line">			y: y,</span><br><span class="line">			xv: xv,</span><br><span class="line">			yv: yv,</span><br><span class="line">			life: life</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -229,18 +227,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/15/3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          关于逻辑像素
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/15/1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">两个按钮间有空隙</div>
+    <a href="/2016/04/15/9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">markdown使用笔记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
