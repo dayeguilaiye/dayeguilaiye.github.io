@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>打砖块</title>
+    <style>
+    canvas {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas id="place"></canvas>
+    <script type="text/javascript">
+    alert("按空格开始游戏 , 左右键控制板子移动");
+    var bgColor = "#111",
+        bullet,
+        bulletColor = "#eee",
+        board,
+        boardColor = "#eee",
+        boardWidth = 200,
+        v = 10,
+        blocks;
+
+    //获取画布
+    var canvas = document.getElementById('place');
+    var ct = canvas.getContext('2d');
+
+
+    //获取屏幕宽高
+    (window.onresize = function() {
+        width = canvas.width = canvas.clientWidth;
+        height = canvas.height = canvas.clientHeight;
+    })();
+
+
+
+    document.onkeydown = function(event) {
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        if (e && e.keyCode == 32) { // 按 a
+            newbullet();
+            newboard();
+            newblocks();
+            start();
+        }
+        if (e && e.keyCode == 37) { // 按 左
+            left();
+        }
+        if (e && e.keyCode == 39) { // 按 右
+            right();
+        }
+    };
+    document.onkeyup = function(event) {
+        board.v = 0;
+    };
+
+    function newbullet() {
+        bullet = {
+            x: width / 2,
+            y: height - 35,
+            xv: 0,
+            yv: 0,
+            r: 10,
+            bcolor: bulletColor
+        }
+    }
+
+    function newboard() {
+        board = {
+            x: width / 2 - boardWidth / 2,
+            bcolor: boardColor,
+            v: 0
+        }
+    }
+
+    function newblocks() {
+        var i = 0;
+        var j = 0;
+        blocks = new Array();
+        for (i = 0; i < 5; i++) {
+            blocks[i] = new Array();
+        }
+        for (i = 0; i < 5; i++) {
+            for (j = 0; j < 6; j++) {
+                if (j == 5) {
+                    blocks[i][j] = {
+                        exist: false
+                    }
+                } else
+                    blocks[i][j] = {
+                        exist: true
+                    }
+            }
+        }
+    }
+
+    function start() {
+        //按空格开始游戏
+        shot();
+        window.requestAnimationFrame(loop = function() {
+            ct.globalCompositeOperation = 'source-over';
+            ct.globalAlpha = 1;
+            ct.fillStyle = bgColor;
+            ct.fillRect(0, 0, width, height);
+            bullet.x += bullet.xv;
+            bullet.y += bullet.yv;
+
+            board.x += board.v;
+            if (board.x < 0) {
+                board.x = 0;
+            }
+            if (board.x > width - boardWidth) {
+                board.x = width - boardWidth;
+            }
+
+
+            //碰撞检测
+            if (bullet.y < 10) {
+                bullet.y = 10;
+                bullet.yv = -bullet.yv;
+            } else if (bullet.y > height - 35) {
+                if (bullet.x > board.x && bullet.x < board.x + boardWidth) {
+                    bullet.y = height - 35;
+                    bullet.xv = v * (bullet.x - board.x - boardWidth / 2) / boardWidth;
+                    bullet.yv = -Math.sqrt(v * v - bullet.xv * bullet.xv);
+                } else
+                    over();
+            }
+            if (bullet.x < 20) {
+                bullet.x = 20;
+                bullet.xv = -bullet.xv;
+            } else if (bullet.x > width - 20) {
+                bullet.x = width - 20;
+                bullet.xv = -bullet.xv;;
+            }
+
+
+            var numx = parseInt(bullet.x / (width / 5)),
+                numy = parseInt(bullet.y / (height / 10)),
+                numx1 = parseInt((bullet.x - 10) / (width / 5)),
+                numx2 = parseInt((bullet.x + 10) / (width / 5)),
+                numy1 = parseInt((bullet.y - 10) / (height / 10)),
+                numy2 = parseInt((bullet.y + 10) / (height / 10));
+            if (bullet.y < height / 2) {
+                //上
+                if (blocks[numx1][numy1].exist && blocks[numx2][numy1].exist) {
+                    blocks[numx][numy1].exist = false;
+                    bullet.yv = -bullet.yv;
+                }
+                //下
+                else if (blocks[numx1][numy2].exist && blocks[numx2][numy2].exist) {
+                    blocks[numx][numy2].exist = false;
+                    bullet.yv = -bullet.yv;
+                }
+                //左
+                else if (blocks[numx1][numy1].exist && blocks[numx1][numy2].exist) {
+                    blocks[numx1][numy].exist = false;
+                    bullet.xv = -bullet.xv;
+                }
+                //右
+                else if (blocks[numx2][numy1].exist && blocks[numx2][numy2].exist) {
+                    blocks[numx2][numy].exist = false;
+                    bullet.xv = -bullet.xv;
+                }
+            }
+
+
+
+
+            //画球
+            ct.beginPath();
+            ct.fillStyle = bullet.bcolor;
+            ct.arc(bullet.x, bullet.y, bullet.r, 0, Math.PI * 2, true);
+            ct.fill();
+
+
+            //画板
+            ct.beginPath();
+            ct.strokeStyle = board.bcolor;
+            ct.lineWidth = 10;
+            ct.beginPath();
+            ct.moveTo(board.x, height - 20);
+            ct.lineTo(board.x + boardWidth, height - 20);
+            ct.lineCap = 'round';
+            ct.stroke();
+
+            //画砖
+            for (var i = 0; i < 5; i++) {
+                for (var j = 0; j < 5; j++) {
+                    if (blocks[i][j].exist == true) {
+                        var w = width / 5;
+                        var h = height / 10;
+                        ct.strokeStyle = '#fff';
+                        ct.strokeRect(i * w, j * h, w, h);
+                    }
+                }
+            }
+
+
+
+            requestAnimationFrame(loop);
+        });
+    }
+
+
+
+    function shot() {
+        bullet.yv = -v;
+    }
+
+    function left() {
+        board.v = -10;
+    }
+
+    function right() {
+        board.v = 10;
+    }
+
+    function over() {
+        alert("game over");
+        location.reload();
+    }
+    </script>
+</body>
+
+</html>
