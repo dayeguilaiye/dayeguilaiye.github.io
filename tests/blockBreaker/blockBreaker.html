@@ -12,13 +12,42 @@
         height: 100%;
         position: absolute;
     }
+    
+    #toast {
+        position: fixed;
+        z-index: 3;
+        width: 7.6em;
+        min-height: 7.6em;
+        top: 180px;
+        left: 50%;
+        margin-left: -3.8em;
+        background: rgba(40, 40, 40, .75);
+        text-align: center;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 50px;
+        font-weight: 100;
+    }
     </style>
 </head>
 
 <body>
     <canvas id="place"></canvas>
+    <div id="toast" style="display: none; color: black">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <i class="weui_icon_toast"></i>
+            <p id="toast_text" class="weui_toast_content"></p>
+        </div>
+    </div>
     <script type="text/javascript">
-    alert("按空格开始游戏 , 左右键控制板子移动");
+    toast = document.getElementById("toast");
+    toast_text = document.getElementById("toast_text");
+    toast_text.innerHTML = "按空格开始游戏 , 左右键控制板子移动";
+    toast.style.display = "block";
+    setTimeout(function() {
+        toast.style.display = "none";
+    }, 2000);
     var bgColor = "#111",
         bullet,
         bulletColor = "#eee",
@@ -27,6 +56,8 @@
         boardWidth = 200,
         v = 10,
         blocks;
+
+    var running = false;
 
     //获取画布
     var canvas = document.getElementById('place');
@@ -44,10 +75,13 @@
     document.onkeydown = function(event) {
         var e = event || window.event || arguments.callee.caller.arguments[0];
         if (e && e.keyCode == 32) { // 按 a
-            newbullet();
-            newboard();
-            newblocks();
-            start();
+            if (!running) {
+                newbullet();
+                newboard();
+                newblocks();
+                start();
+            }
+
         }
         if (e && e.keyCode == 37) { // 按 左
             left();
@@ -101,9 +135,23 @@
     }
 
     function start() {
+        running = true;
         //按空格开始游戏
         shot();
         window.requestAnimationFrame(loop = function() {
+
+            //检测胜利
+            var iswin = true;
+            for (i = 0; i < 5; i++) {
+                for (j = 0; j < 6; j++) {
+                    if (blocks[i][j].exist)
+                        iswin = false;
+
+                }
+            }
+            if (iswin) win();
+
+
             ct.globalCompositeOperation = 'source-over';
             ct.globalAlpha = 1;
             ct.fillStyle = bgColor;
@@ -125,7 +173,7 @@
                 bullet.y = 10;
                 bullet.yv = -bullet.yv;
             } else if (bullet.y > height - 35) {
-                if (bullet.x > board.x && bullet.x < board.x + boardWidth) {
+                if (bullet.x > board.x - 10 && bullet.x < board.x + boardWidth + 10) {
                     bullet.y = height - 35;
                     bullet.xv = v * (bullet.x - board.x - boardWidth / 2) / boardWidth;
                     bullet.yv = -Math.sqrt(v * v - bullet.xv * bullet.xv);
@@ -223,8 +271,22 @@
     }
 
     function over() {
-        alert("game over");
+        toast_text.innerHTML = "game over";
+        toast.style.display = "block";
+        setTimeout(function() {
+            toast.style.display = "none";
         location.reload();
+        }, 2000);
+    }
+
+    function win() {
+        toast_text.innerHTML = "win";
+        toast.style.display = "block";
+        setTimeout(function() {
+            toast.style.display = "none";
+            location.reload();
+        }, 2000);
+
     }
     </script>
 </body>
