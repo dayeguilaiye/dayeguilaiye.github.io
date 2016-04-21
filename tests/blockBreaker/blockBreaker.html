@@ -149,7 +149,10 @@
 
                 }
             }
-            if (iswin) win();
+            if (iswin) {
+                win();
+                return;
+            }
 
 
             ct.globalCompositeOperation = 'source-over';
@@ -177,8 +180,10 @@
                     bullet.y = height - 35;
                     bullet.xv = v * (bullet.x - board.x - boardWidth / 2) / boardWidth;
                     bullet.yv = -Math.sqrt(v * v - bullet.xv * bullet.xv);
-                } else
+                } else{
                     over();
+                    return;
+                }
             }
             if (bullet.x < 20) {
                 bullet.x = 20;
