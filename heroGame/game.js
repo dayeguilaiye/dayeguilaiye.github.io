@@ -62,7 +62,7 @@ function setup() {
     info.style.width = moveW * 5 + "px";
     info.style.height = moveW * 13 + "px";
     info.style.backgroundColor = "#eee";
-    info.style.left = moveW * 16.5 + "px";
+    info.style.left = moveW * 16.5+20 + "px";
     info.style.top = moveW * 0.5 + "px";
 
     var infos = info.childNodes;

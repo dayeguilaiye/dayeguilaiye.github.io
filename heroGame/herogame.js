@@ -1,13 +1,13 @@
 function startGame() {
 
-    
+
     //键盘键入事件
     //需要获取awdx四个键分别移动四个方向,绑定moveHero函数,传入方向参数
     //键入其他参数则在消息提示处显示错误按键
     document.onkeydown = moveEvent;
 
     function moveEvent(event) {
-        
+
         var e = event || window.event || arguments.callee.caller.arguments[0];
         if (e && e.keyCode == 65) { // 按 A 
             document.onkeydown = null;
@@ -90,7 +90,7 @@ function startGame() {
         }
         for (var i in ens) {
             if (ens[i].left == hero.left && ens[i].top == hero.top) {
-                hero.super = parseInt(hero.super, 10)+parseInt(ens[i].value, 10);
+                hero.super = parseInt(hero.super, 10) + parseInt(ens[i].value, 10);
                 addScore(ens[i].value);
                 ens[i].element.style.opacity = 0;
                 ens[i] = ens[ens.length - 1];
@@ -109,7 +109,7 @@ function startGame() {
             hero.super--;
         }
         setTimeout(killerMove, 700);
-        
+
     }
     //killerMove函数 
     //循环killers执行下列操作,没有killer则直接执行endMove()
@@ -157,7 +157,10 @@ function startGame() {
                 }
                 return arr;
             })();
-            var moveTo = null, canMove = false, bestMove = null, canMoves = [];
+            var moveTo = null,
+                canMove = false,
+                bestMove = null,
+                canMoves = [];
             var eight = [ //这个杀手八个方向
                 { x: killers[i].left + moveW, y: killers[i].top }, //right
                 { x: killers[i].left - moveW, y: killers[i].top }, //left
@@ -257,30 +260,32 @@ function startGame() {
 }
 
 function endGame() {
-    document.getElementById("end").style.display = "none";
-    document.getElementById("start").style.display = "block";
-    if (hero.life == false) {
-        warning('Killers Win!');
-    } else if ((!ens.length) || (!killers.length) || ens.length == 0 || killers.length == 0) {
-        warning('You Win! Your score:' + score);
-    }
-    else
-        warning("Draw!");
-    //清理全部元素
-    game.innerHTML = "";
-    setup();
-    //重新预定义第一部分
-    hero = {
-        life: false,
-        super: 0,
-        left: 0,
-        top: 0,
-        element: null
-    };
-    killers = [];
-    stones = [];
-    ens = [];
-    score = 0;
-    round = 0;
-    refreshgame();
+    setTimeout(function() {
+        document.getElementById("end").style.display = "none";
+        document.getElementById("start").style.display = "block";
+        if (hero.life == false) {
+            warning('Killers Win!');
+        } else if ((!ens.length) || (!killers.length) || ens.length == 0 || killers.length == 0) {
+            warning('You Win! Your score:' + score);
+        } else
+            warning("Draw!");
+        //清理全部元素
+        game.innerHTML = "";
+        setup();
+        //重新预定义第一部分
+        hero = {
+            life: false,
+            super: 0,
+            left: 0,
+            top: 0,
+            element: null
+        };
+        killers = [];
+        stones = [];
+        ens = [];
+        score = 0;
+        round = 0;
+        refreshgame();
+    }, 500);
+
 }
