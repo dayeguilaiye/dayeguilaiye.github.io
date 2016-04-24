@@ -130,7 +130,6 @@ function setup() {
 function refreshgame() {
     document.getElementById("score").innerHTML = score;
     document.getElementById("rd").innerHTML = round;
-    document.getElementById("noe").innerHTML = ens.length;
     document.getElementById("nos").innerHTML = hero.super;
 }
 
