@@ -88,9 +88,17 @@ function startGame() {
             ifremove = false;
             killers.length -= 1;
         }
+        hero.super--;
+        if (hero.super <= 0) {
+            hero.super = 0;
+            hero.element.className = 'hero';
+        } else if (hero.super > 0) {
+            hero.element.className = 'sHero';
+        }
+        setTimeout(killerMove, 700);
         for (var i in ens) {
             if (ens[i].left == hero.left && ens[i].top == hero.top) {
-                hero.super += ens[i].value;
+                hero.super = parseInt(hero.super, 10)+parseInt(ens[i].value, 10);
                 addScore(ens[i].value);
                 ens[i].element.style.display = 'none';
                 ens[i] = ens[ens.length - 1];
@@ -101,14 +109,7 @@ function startGame() {
             ifremove = false;
             ens.length -= 1;
         }
-        hero.super--;
-        if (hero.super <= 0) {
-            hero.super = 0;
-            hero.element.className = 'hero';
-        } else if (hero.super > 0) {
-            hero.element.className = 'sHero';
-        }
-        setTimeout(killerMove, 700);
+        
         
     }
     //killerMove函数 

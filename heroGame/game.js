@@ -279,9 +279,9 @@ function start() {
 
 }
 
-//添加100分
+//添加分数
 function addScore(s) {
-    score += parseInt(s, 10);
+    score = parseInt(score, 10)+parseInt(s, 10);
     refreshgame();
 }
 
