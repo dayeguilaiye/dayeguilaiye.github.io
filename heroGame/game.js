@@ -176,7 +176,7 @@ function confirm() {
 //添加英雄
 function addH() {
     if (hero.element != null) {
-        warning("You have already set a hero!");
+        warningauto("You have already set a hero!");
         return false;
     }
     heroE = document.createElement("div");
@@ -199,7 +199,6 @@ function addH() {
 
 //添加能量
 var addE = (function() {
-    var nexten = 0;
     return function(num) {
         enE = document.createElement("div");
         enE.setAttribute('class', 'en');
@@ -209,8 +208,7 @@ var addE = (function() {
         enE.style.top = addy + "px";
         enE.style.background = "url('img/en" + num + ".png') no-repeat";
         game.appendChild(enE);
-        ens[nexten++] = {
-            index: nexten,
+        ens[ens.length] = {
             value: num,
             left: addx,
             top: addy,
@@ -221,7 +219,6 @@ var addE = (function() {
 
 //添加杀手
 var addK = (function() {
-    var nextkiller = 0;
     return function() {
         killerE = document.createElement("div");
         killerE.setAttribute('class', 'killer');
@@ -230,8 +227,7 @@ var addK = (function() {
         killerE.style.left = addx + "px";
         killerE.style.top = addy + "px";
         game.appendChild(killerE);
-        killers[nextkiller++] = {
-            index: nextkiller,
+        killers[killers.length] = {
             left: addx,
             top: addy,
             element: killerE
@@ -241,7 +237,6 @@ var addK = (function() {
 
 //添加障碍物
 var addS = (function() {
-    var nextstone = 0;
     return function() {
         stoneE = document.createElement("div");
         stoneE.setAttribute('class', 'stone');
@@ -250,8 +245,7 @@ var addS = (function() {
         stoneE.style.left = addx + "px";
         stoneE.style.top = addy + "px";
         game.appendChild(stoneE);
-        stones[nextstone++] = {
-            index: nextstone,
+        stones[stones.length] = {
             left: addx,
             top: addy,
             element: stoneE
@@ -261,18 +255,19 @@ var addS = (function() {
 
 //输入错误
 function wrongInput() {
-    warning("Wrong input!");
+    warningauto("Wrong input!");
 }
 
 //开始游戏
-function start() {
-    if (((!ens.length) || (!killers.length) || ens.length == 0 || killers.length == 0) && hero.life == true) {
-        endGame();
-        return;
-    } else if ((!ens.length) || (!killers.length) || ens.length == 0 || killers.length == 0) {
-        warning("You didn't set a hero")
+function start() { 
+    if (hero.life == false) {
+        warningauto("You didn't set a hero");
         return;
     }
+    else if ((!ens.length) || (!killers.length) || ens.length == 0 || killers.length == 0) {
+        endGame();
+        return;
+    }    
     for (var i = 0; i < 99; i++) {
         lis[i].onclick = null;
     }
@@ -295,9 +290,9 @@ function warning(s) {
     wrongKey.style.display = "block";
 }
 
-function wrongKey() {
+function warningauto(s) {
     var wrongKey = document.getElementById("wrongKey");
-    wrongKey.innerHTML = "Wrong Key!";
+    wrongKey.innerHTML = s;
     wrongKey.style.display = "block";
     setTimeout(function() {
         wrongKey.style.display = "none";

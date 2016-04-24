@@ -22,7 +22,7 @@ function startGame() {
             document.onkeydown = null;
             moveHero('down');
         } else {
-            wrongKey();
+            warningauto("Wrong Key");
         }
         refreshgame();
     };
@@ -73,7 +73,7 @@ function startGame() {
         for (var i in killers) {
             if (killers[i].left == hero.left && killers[i].top == hero.top) {
                 if (hero.super > 0) {
-                    killers[i].element.style.display = 'none';
+                    killers[i].element.style.opacity = 0;
                     killers[i] = killers[killers.length - 1];
                     ifremove = true;
                     addScore(100);
@@ -92,7 +92,7 @@ function startGame() {
             if (ens[i].left == hero.left && ens[i].top == hero.top) {
                 hero.super = parseInt(hero.super, 10)+parseInt(ens[i].value, 10);
                 addScore(ens[i].value);
-                ens[i].element.style.display = 'none';
+                ens[i].element.style.opacity = 0;
                 ens[i] = ens[ens.length - 1];
                 ifremove = true;
             }
@@ -213,7 +213,7 @@ function startGame() {
             }
             for (var key in ens) {
                 if (ens[key].left == killers[i].left && ens[key].top == killers[i].top) {
-                    ens[key].element.style.display = 'none';
+                    ens[key].element.style.opacity = 0;
                     ens[key] = ens[ens.length - 1];
                     ifremove = true;
                 }
@@ -224,8 +224,8 @@ function startGame() {
             }
             if (killers[i].left == hero.left && killers[i].top == hero.top) {
                 if (hero.super > 0) {
-                    killers[i].element.style.display = 'none';
-                    killers[key] = killers[killers.length - 1];
+                    killers[i].element.style.opacity = 0;
+                    killers[i] = killers[killers.length - 1];
                     ifremove = true;
                     addScore(100);
                 } else {
@@ -260,7 +260,7 @@ function endGame() {
     document.getElementById("end").style.display = "none";
     document.getElementById("start").style.display = "block";
     if (hero.life == false) {
-        warning('Game Over!');
+        warning('Killers Win!');
     } else if ((!ens.length) || (!killers.length) || ens.length == 0 || killers.length == 0) {
         warning('You Win! Your score:' + score);
     }
