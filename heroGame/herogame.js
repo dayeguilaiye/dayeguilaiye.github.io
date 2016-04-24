@@ -7,7 +7,7 @@ function startGame() {
     document.onkeydown = moveEvent;
 
     function moveEvent(event) {
-        round++;
+        
         var e = event || window.event || arguments.callee.caller.arguments[0];
         if (e && e.keyCode == 65) { // 按 A 
             document.onkeydown = null;
@@ -88,14 +88,6 @@ function startGame() {
             ifremove = false;
             killers.length -= 1;
         }
-        hero.super--;
-        if (hero.super <= 0) {
-            hero.super = 0;
-            hero.element.className = 'hero';
-        } else if (hero.super > 0) {
-            hero.element.className = 'sHero';
-        }
-        setTimeout(killerMove, 700);
         for (var i in ens) {
             if (ens[i].left == hero.left && ens[i].top == hero.top) {
                 hero.super = parseInt(hero.super, 10)+parseInt(ens[i].value, 10);
@@ -109,7 +101,14 @@ function startGame() {
             ifremove = false;
             ens.length -= 1;
         }
-        
+        if (hero.super <= 0) {
+            hero.super = 0;
+            hero.element.className = 'hero';
+        } else if (hero.super > 0) {
+            hero.element.className = 'sHero';
+            hero.super--;
+        }
+        setTimeout(killerMove, 700);
         
     }
     //killerMove函数 
@@ -217,7 +216,6 @@ function startGame() {
                     ens[key].element.style.display = 'none';
                     ens[key] = ens[ens.length - 1];
                     ifremove = true;
-                    addScore(100);
                 }
             }
             if (ifremove) {
@@ -229,6 +227,7 @@ function startGame() {
                     killers[i].element.style.display = 'none';
                     killers[key] = killers[killers.length - 1];
                     ifremove = true;
+                    addScore(100);
                 } else {
                     hero.life = false;
                     endMove();
@@ -240,6 +239,8 @@ function startGame() {
                 killers.length -= 1;
             }
         }
+        round++;
+        refreshgame();
         endMove();
     }
     //endMove函数

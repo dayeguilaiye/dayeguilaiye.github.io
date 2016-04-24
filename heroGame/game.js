@@ -273,6 +273,9 @@ function start() {
         warning("You didn't set a hero")
         return;
     }
+    for (var i = 0; i < 99; i++) {
+        lis[i].onclick = null;
+    }
     document.getElementById("start").style.display = "none";
     document.getElementById("end").style.display = "block";
     startGame();
