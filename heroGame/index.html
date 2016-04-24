@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="game.css">
+</head>
+
+<body onload="setup()">
+    <div id="ctrl">
+        <button id="start" onclick="start()">Start Game</button>
+        <button id="end" onclick="endGame()" style="display: none">End</button>
+        <div id="instr">
+            <div class="heroinfo">
+                <img src="img/hero.png">
+            </div>
+            <div class="descript">This is the hero you have to control.</div>
+            <div class="killerinfo">
+                <img src="img/killer.png">
+            </div>
+            <div class="descript">This is the killer who gonna kill you.</div>
+            <div class="stoneinfo">
+                <img src="img/stone.png">
+            </div>
+            <div class="descript">This is a stone that you can't get there.</div>
+            <div class="eninfo">
+                <img src="img/en5.png">
+            </div>
+            <div class="descript">This is energy. You can get this to become a super hero.</div>
+            <div class="sheroinfo">
+                <img src="img/shero.png">
+            </div>
+            <div class="descript">This is the super hero. If you are a super hero, you can kill killers.</div>
+        </div>
+    </div>
+    <div id="game"></div>
+    <div id="info">
+    	<div>Score:<span id="score"></span></div>
+        <div>round:<span id="rd"></span></div>
+        <div>Number of energy:<span id="noe"></span></div>
+        <div>super time:<span id="nos"></span></div>
+    </div>
+    <div id="addInput" style="display: none">
+        <input id="addI" type="text" maxlength="1"></input>
+        <button onclick="confirm()">confirm</button>
+        <button onclick="hideAdd()">cancel</button>
+        <p>
+            input h to put a hero here
+            <br /> input k to put a killer here
+            <br /> input o to put a obstacle here
+            <br /> input 1-9 to put a power-up here
+        </p>
+    </div>
+    <div class="warning" id="wrongKey" onclick = "hideWarning()"></div>
+</body>
+<script type="text/javascript" src="game.js"></script>
+<script type="text/javascript" src="herogame.js"></script>
+
+</html>
