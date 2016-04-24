@@ -55,13 +55,13 @@ function startGame() {
                 return;
         }
         if (newX >= width || newX < 0 || newY < 0 || newY >= height) {
-            warning("You hit the wall");
+            warningauto("You hit the wall");
             killerMove();
             return
         }
         for (var i in stones) {
             if (stones[i].left == newX && stones[i].top == newY) {
-                warning("You hit the wall");
+                warningauto("You hit the wall");
                 killerMove();
                 return
             }
