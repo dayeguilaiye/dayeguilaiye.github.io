@@ -86,9 +86,9 @@ function setup() {
     game.style.height = moveW * 10 + "px";
     game.style.backgroundColor = "#eee";
     game.style.left = moveW * 6 + "px";
-    game.style.top = moveW*0.5 + "px";
+    game.style.top = moveW * 0.5 + "px";
     game.style.border = "10px solid #CEA98C";
-    
+
     //网格绘制
     uls = new Array();
     lis = new Array();
@@ -284,7 +284,7 @@ function start() {
 
 //添加分数
 function addScore(s) {
-    score = parseInt(score, 10)+parseInt(s, 10);
+    score = parseInt(score, 10) + parseInt(s, 10);
     refreshgame();
 }
 
@@ -293,6 +293,16 @@ function warning(s) {
     var wrongKey = document.getElementById("wrongKey");
     wrongKey.innerHTML = s + "<br />Click to continue";
     wrongKey.style.display = "block";
+}
+
+function wrongKey() {
+    var wrongKey = document.getElementById("wrongKey");
+    wrongKey.innerHTML = "Wrong Key!";
+    wrongKey.style.display = "block";
+    setTimeout(function() {
+        wrongKey.style.display = "none";
+    }, 1000);
+
 }
 
 //隐藏警告框

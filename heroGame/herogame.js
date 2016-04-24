@@ -22,7 +22,7 @@ function startGame() {
             document.onkeydown = null;
             moveHero('down');
         } else {
-            warning("Wrong key")
+            wrongKey();
         }
         refreshgame();
     };
