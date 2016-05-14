@@ -1,0 +1,41 @@
+html,body{
+	background-color: #b0dfe5;
+	color: #5f3811;
+	margin:0;
+}
+
+div{
+	text-align: center;
+	display: block;
+	margin: 20px 0px;
+	font-size: 30px;
+	text-decoration: none;
+	font-family: 'Microsoft YaHei';
+}
+
+.ch{
+	display: none;
+	color: #bc804c;
+}
+
+.en{
+	cursor:pointer;
+}
+
+.get{
+	float: left;
+	width: 80px;
+	cursor:pointer;
+}
+
+.ohuo{
+	float: left;
+	width: 80px;
+	cursor:pointer;
+}
+
+.void{
+	float: left;
+	width: 160px;
+	height: 20px;
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<link rel='stylesheet' type='text/css' href='css/eng.css'>
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/eng.js'></script>
+<script type="text/javascript" src="js/js.cookie-2.1.0.min.js"></script>
+</head>
+<script type="text/javascript">
+var i = 0;
+var unknown = [];
+</script>
+<body>
