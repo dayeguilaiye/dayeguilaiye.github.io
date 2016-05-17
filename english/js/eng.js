@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
     var str;
     // unknown[0] = "no5";
     // unknown[1] = "no9";
@@ -12,11 +12,15 @@ $(document).ready(function() {
     // 获取之前存入的未记住的单词
     str = localStorage.unknown;
     unknown = eval(str);
-    i = unknown.length;
-	recolor();
+    if (unknown) {
+        i = unknown.length;
+    } else {
+        i = 0;
+    }
+    recolor();
 
 
-	// 读取上次阅读到的地方
+    // 读取上次阅读到的地方
     location.href = "#" + localStorage.last;
     $("#" + localStorage.last).css('color', 'blue');
 
@@ -61,11 +65,11 @@ $(document).ready(function() {
         for (var j = 0; j < i; j++) {
             if (unknown[j] == tmp) {
                 unknown[j] = null;
-                $(this).next().next().css('color','#5f3811');
+                $(this).next().next().css('color', '#5f3811');
                 break;
             }
         }
-        
+
         str = JSON.stringify(unknown);
         //存入 
         localStorage.unknown = str;
@@ -74,12 +78,12 @@ $(document).ready(function() {
 });
 
 
-function recolor(){
-	var str = localStorage.unknown;
+function recolor() {
+    var str = localStorage.unknown;
     unknown = eval(str);
-	for (var j = 0; j < i; j++) {
-		if(unknown[j] != null){
-			$("#"+unknown[j]).css('color','red');
-		}
-	}
+    for (var j = 0; j < i; j++) {
+        if (unknown[j] != null) {
+            $("#" + unknown[j]).css('color', 'red');
+        }
+    }
 }
