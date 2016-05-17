@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     var str;
-    var unknown;
+    var unknown = [];
     // unknown[0] = "no5";
     // unknown[1] = "no9";
     // unknown[2] = null;
