@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     var str;
+    var unknown;
     // unknown[0] = "no5";
     // unknown[1] = "no9";
     // unknown[2] = null;
@@ -46,8 +47,7 @@ $(document).ready(function() {
             }
         }
         if (!loaded) {
-            unknown[i + 1] = tmp;
-            i++;
+            unknown[i++] = tmp;
             loaded = 1
         }
         str = JSON.stringify(unknown);
