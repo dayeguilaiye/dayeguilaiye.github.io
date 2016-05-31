@@ -1,6 +1,6 @@
-    var unknown = [];
-$(document).ready(function() {
 
+$(document).ready(function() {
+    var unknown = [];
     var str;
 
     // unknown[0] = "no5";
