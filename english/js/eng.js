@@ -3,7 +3,7 @@ var str;
 
 // 获取之前存入的未记住的单词
 str = localStorage.unknown;
-unknown = eval(str);
+//unknown = eval(str);
 if (unknown) {
     i = unknown.length;
 } else {
