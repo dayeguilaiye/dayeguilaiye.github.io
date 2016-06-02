@@ -1,4 +1,4 @@
-var unknown = {};
+var unknown = [];
 var str;
 
 // 获取之前存入的未记住的单词
