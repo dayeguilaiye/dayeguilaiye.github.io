@@ -35,10 +35,6 @@ $(".ohuo").click(function() {
             loaded = 1;
             break;
         }
-        if (unknown[j] == tmp) {
-            loaded = 1;
-            break;
-        }
     }
     if (!loaded) {
         unknown[i++] = tmp;
