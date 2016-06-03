@@ -28,6 +28,7 @@ $(".en").click(function() {
 $(".ohuo").click(function() {
     var tmp = $(this).next().attr('id');
     var loaded = 0;
+    var test=unknown;
     for (var j = 0; j < i; j++) {
         if (unknown[j] == null) {
             unknown[j] = tmp;
