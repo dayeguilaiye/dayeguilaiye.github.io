@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>使用simple迅速搭建博客 | dayeguilaiye&#39;s blog</title>
+  <title>如何使用php从数据库中获取数据 | dayeguilaiye&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="教程来自isnowfy的个人博客">
+  <meta name="description" content="代码如下:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用simple迅速搭建博客">
-<meta property="og:url" content="http://yoursite.com/2016/04/15/2/index.html">
+<meta property="og:title" content="如何使用php从数据库中获取数据">
+<meta property="og:url" content="http://yoursite.com/2016/07/18/15/index.html">
 <meta property="og:site_name" content="dayeguilaiye's blog">
-<meta property="og:description" content="教程来自isnowfy的个人博客">
-<meta property="og:updated_time" content="2016-04-21T12:07:36.578Z">
+<meta property="og:description" content="代码如下:">
+<meta property="og:updated_time" content="2016-07-18T02:28:14.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用simple迅速搭建博客">
-<meta name="twitter:description" content="教程来自isnowfy的个人博客">
+<meta name="twitter:title" content="如何使用php从数据库中获取数据">
+<meta name="twitter:description" content="代码如下:">
   
     <link rel="alternative" href="/atom.xml" title="dayeguilaiye&#39;s blog" type="application/atom+xml">
   
@@ -180,11 +180,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-15" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/15/2/" class="article-date">
-  	<time datetime="2016-04-15T04:38:50.000Z" itemprop="datePublished">2016-04-15</time>
+      <a href="/2016/07/18/15/" class="article-date">
+  	<time datetime="2016-07-18T02:23:12.000Z" itemprop="datePublished">2016-07-18</time>
 </a>
     </div>
   
@@ -197,7 +197,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      使用simple迅速搭建博客
+      如何使用php从数据库中获取数据
     </h1>
   
 
@@ -206,7 +206,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
 	</div>
 
         
@@ -217,9 +217,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>教程来自<a href="http://isnowfy.github.io/about-simple-cn.html" target="_blank" rel="external">isnowfy的个人博客</a> </p>
-<a id="more"></a>
-<p>十分方便，此工具是isnowfy制作，想用github page搭建个人博客，又不想太费神或者对技术不太感兴趣的朋友可以采用此办法。</p>
+        <p>代码如下:<br><a id="more"></a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">$server_name=<span class="string">"localhost:2333"</span>; <span class="comment">//数据库服务器名称 </span></span><br><span class="line">$username=<span class="string">"user"</span>; <span class="comment">// 连接数据库用户名 </span></span><br><span class="line">$password=<span class="string">"password"</span>; <span class="comment">// 连接数据库密码 </span></span><br><span class="line">$mysql_database=<span class="string">"database"</span>; <span class="comment">// 数据库的名字 </span></span><br><span class="line"><span class="comment">// 连接到数据库 </span></span><br><span class="line">$conn=mysql_connect($server_name, $username, $password); </span><br><span class="line">mysql_query(<span class="string">"set names utf8"</span>);</span><br><span class="line"><span class="comment">// 从表中提取信息的sql语句 </span></span><br><span class="line">$strsql=<span class="string">"SELECT * FROM table WHERE id = 0;"</span>; </span><br><span class="line"><span class="comment">//执行sql查询 </span></span><br><span class="line"><span class="comment">//mysql_select_db($mysql_database,$conn);</span></span><br><span class="line"><span class="comment">//$result=mysql_query($sql);</span></span><br><span class="line">mysql_select_db($mysql_database,$conn);</span><br><span class="line">$result=mysql_query($strsql,$conn);</span><br><span class="line"><span class="comment">// 获取查询结果 </span></span><br><span class="line"><span class="comment">// 定位到第一条记录 </span></span><br><span class="line">mysql_data_seek($result, <span class="number">0</span>); </span><br><span class="line"><span class="comment">//整合为数组并转为json</span></span><br><span class="line"><span class="keyword">while</span>($arr = mysql_fetch_assoc($result))&#123;</span><br><span class="line">    $result_arr[] = $arr;</span><br><span class="line">&#125;</span><br><span class="line">$result_arr=json_encode($result_arr);</span><br><span class="line"><span class="comment">//输出数据</span></span><br><span class="line"><span class="keyword">echo</span> $result_arr;</span><br><span class="line"><span class="comment">// 释放资源 </span></span><br><span class="line">mysql_free_result($result); </span><br><span class="line"><span class="comment">// 关闭连接 </span></span><br><span class="line">mysql_close($conn);  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>整合为数组并转为json这一步不一定要这样做 , 可以根据需求自行修改</p>
 
       
     </div>
@@ -229,18 +228,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/15/3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          关于逻辑像素
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/15/1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">两个按钮间有空隙</div>
+    <a href="/2016/07/18/14/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php获取url中的参数</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
