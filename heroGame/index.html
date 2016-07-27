@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            position: absolute;
+            font-family: 'Microsoft YaHei';
+        }
+        #move-center{
+            left: 50%;
+        }
+        #addInput {
+            margin-left: -300px;
+            margin-top: -150px;
+            width: 600px;
+            height: 300px;
+            background-color: gray;
+            opacity: 0.8;
+            z-index: 7;
+            position: relative;
+        }
+        #addInput input {
+            width: 200px;
+            height: 50px;
+            margin-left: 200px;
+            margin-top: 20px;
+            font-size: 50px;
+        }
+        #addInput p {
+            margin-left: 100px;
+            font-size: 20px;
+            color: white;
+        }
+        .warning{
+            z-index: 7;
+            background-color: gray;
+            opacity: 0.8;
+            font-size: 20px;
+            text-align: center;
+            display: none;
+        }
+        .en {
+            z-index: 3;
+            margin: 0;
+            border: 1px solid gray;
+            transition: all 0.5s;
+        }
+        .hero {
+            z-index: 4;
+            margin: 0;
+            background : url('img/hero.png') no-repeat;
+            background-size: 100%;
+            transition: all 0.5s;
+        }
+        .killer {
+            z-index: 5;
+            margin: 0;
+            background : url('img/killer.png') no-repeat;
+            background-size: 100%;
+            transition: all 0.5s;
+        }
+        .sHero {
+            z-index: 6;
+            margin: 0;
+            background : url('img/shero.png') no-repeat;
+            background-size: 100%;
+            transition: all 0.5s;
+        }
+        .stone {
+            margin: 0;
+            border: 1px solid gray;
+            background : url('img/stone.png') no-repeat;
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body onload="setup()">
+    <div id="move-center">
+        <div id="ctrl">
+            <button id="start" onclick="start()">Start Game</button>
+            <button id="end" onclick="endGame()" style="display: none">End</button>
+            <div id="instr">
+                <div class="heroinfo">
+                    <img class="pics" src="img/hero.png">
+                </div>
+                <div class="descript">This is the hero you have to control.</div>
+                <div class="killerinfo">
+                    <img class="pics" src="img/killer.png">
+                </div>
+                <div class="descript">This is the killer who gonna kill you.</div>
+                <div class="stoneinfo">
+                    <img class="pics" src="img/stone.png">
+                </div>
+                <div class="descript">This is a stone that you can't get there.</div>
+                <div class="eninfo">
+                    <img class="pics" src="img/en5.png">
+                </div>
+                <div class="descript">This is energy. You can get this to become a super hero.</div>
+                <div class="sheroinfo">
+                    <img class="pics" src="img/shero.png">
+                </div>
+                <div class="descript">This is the super hero. If you are a super hero, you can kill killers.</div>
+            </div>
+        </div>
+        <div id="game"></div>
+        <div id="info">
+            <div>Score:<span id="score"></span></div>
+            <div>round:<span id="rd"></span></div>
+            <div>super time:<span id="nos"></span></div>
+        </div>
+        <div id="addInput" style="display: none">
+            <input id="addI" type="text" maxlength="1"></input>
+            <button onclick="confirm()">confirm</button>
+            <button onclick="hideAdd()">cancel</button>
+            <p>
+                input h to put a hero here
+                <br /> input k to put a killer here
+                <br /> input o to put a obstacle here
+                <br /> input 1-9 to put a power-up here
+            </p>
+        </div>
+        <div class="warning" id="wrongKey"></div>
+    </div>
+    <script type="text/javascript" src="game.js"></script>
+</body>
+</html>
