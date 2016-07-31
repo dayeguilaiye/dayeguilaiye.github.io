@@ -1,0 +1,27 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.head{
+	width: 100%;
+	height: 60px;
+	background: white;
+	border-top: 5px solid #7DAA2A;
+	border-bottom: 1px solid #DEDDDF;
+	position: fixed;
+	margin: 0px;
+	padding: 0px;
+}
+.main{
+	width: 80%;
+	height: 1000px;
+	background: gold;
+	margin: 0 auto;
+}
+.foot{
+	width:80%;
+	height: 80px;
+	background: blue;
+	margin: 0 auto;
+}
