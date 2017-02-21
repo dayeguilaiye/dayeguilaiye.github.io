@@ -49,8 +49,13 @@
 }
 
 .artical{
-		margin-top: 12%;
-		font-size: 33px;
-		font-weight: normal;
-		text-align: left;
+	margin-top: 12%;
+	font-size: 33px;
+	font-weight: normal;
+	text-align: left;
+}
+
+.detail{
+	font-size: .15rem;
+	margin-top: 0.2rem;
 }
