@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/02/13/21/index.html">
 <meta property="og:site_name" content="dayeguilaiye's blog">
 <meta property="og:description" content="学习过程中发现一些东西不能用，查了一下发现是v4.0进行了一些更新，原来的一些用法就不能用了，这里做一下记录，以后如果发现了新的改变就继续放在这里。（吐槽一下，我朝看stackoverflow是真的慢啊，没有梯子真是找不到为什么）">
-<meta property="og:updated_time" content="2017-02-12T08:39:59.459Z">
+<meta property="og:updated_time" content="2017-02-13T02:22:35.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="d3.js中发现的v4中的更改">
 <meta name="twitter:description" content="学习过程中发现一些东西不能用，查了一下发现是v4.0进行了一些更新，原来的一些用法就不能用了，这里做一下记录，以后如果发现了新的改变就继续放在这里。（吐槽一下，我朝看stackoverflow是真的慢啊，没有梯子真是找不到为什么）">
@@ -70,10 +70,10 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>Menu</li>
-						<li>Tags</li>
+						<li>Тэги</li>
 						
 						
-						<li>Über</li>
+						<li>О сайте</li>
 						
 					</ul>
 				</div>
@@ -225,6 +225,8 @@
 <p>v4.0:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> linear = d3.scaleLinear()</span><br><span class="line">    .domain([<span class="number">0</span>, d3.max(dataset)])</span><br><span class="line">    .range([<span class="number">0</span>, <span class="number">250</span>]);</span><br></pre></td></tr></table></figure></p>
 <p>2:坐标轴<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> axis = d3.svg.axis()</span><br><span class="line">	.scale(linear)   </span><br><span class="line">    .orient(<span class="string">"bottom"</span>) </span><br><span class="line">    .ticks(<span class="number">7</span>);</span><br></pre></td></tr></table></figure></p>
 <p>v4.0:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> axis = d3.axisBottom()</span><br><span class="line">    .scale(linear)</span><br><span class="line">    .ticks(<span class="number">7</span>);</span><br></pre></td></tr></table></figure></p>
+<p>3.获取横向矩形宽度<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.attr(<span class="string">"width"</span>, xScale.rangeBand());</span><br></pre></td></tr></table></figure></p>
+<p>v4.0:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.attr(<span class="string">"width"</span>, xScale.bandWidth());</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
